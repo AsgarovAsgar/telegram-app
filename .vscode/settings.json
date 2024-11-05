@@ -1,0 +1,32 @@
+{
+  // Theming
+  "editor.fontFamily": "Dank Mono",
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "Dank Mono",
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredDarkColorTheme": "Default Dark Modern",
+  "editor.codeLensFontSize": 13,
+  "editor.fontSize": 15,
+  "editor.lineHeight": 1.50,
+  "editor.suggestFontSize": 15,
+  // More minimal UI
+  "window.zoomLevel": 1,
+  "editor.glyphMargin": false,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.pinnedTabSizing": "compact",
+  "workbench.editor.tabSizing": "shrink",
+  "breadcrumbs.enabled": false,
+  "editor.lightbulb.enabled": "off",
+  "editor.overviewRulerBorder": false,
+  "editor.renderLineHighlight": "line",
+  "editor.renderControlCharacters": false,
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+  // Search
+  "search.smartCase": true,
+  "search.useIgnoreFiles": false,
+}
