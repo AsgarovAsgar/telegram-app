@@ -11,7 +11,7 @@
       <UInput icon="ic:round-search" variant="soft" :ui="{ base: 'rounded-full bg-gray-100' }" class="flex-1" placeholder="Search"></UInput>
     </div>
 
-    <div class="px-3 py-1.5 flex flex-col overflow-scroll">
+    <div class="pl-3 py-1.5 flex flex-col overflow-y-scroll scrollbar">
       <div v-for="i in 10" class="flex relative gap-1 p-1.5 rounded-lg items-center cursor-pointer hover:bg-gray-100">
         <p class="absolute top-2 right-1.5 text-[10px]">Tue</p>
         <p class="shrink-0 w-[50px] h-[50px] rounded-full bg-green-500"></p>
