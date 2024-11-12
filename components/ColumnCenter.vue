@@ -75,11 +75,12 @@ const groupedMessages = ref([
         </button>
       </div>
     </div>
-    <div class="bg-green-200 flex flex-col overflow-hidden grow">
+    <div class="relative flex flex-col overflow-hidden grow">
+      <img class="absolute top-0 h-screen object-cover -z-10" src="~/assets/telegram-bg.png" alt="">
       <div ref="messageContainerRef" class="mb-2 flex mt-auto flex-col overflow-hidden overflow-y-scroll scrollbar-chat">
         <div :class="isChatVisible ? 'visible': 'invisible'" class="pt-10 pb-1 flex flex-col gap-4 max-w-lg mx-auto w-full">
           <div v-for="group in groupedMessages" :key="group.date" class="flex flex-col gap-1.5">
-            <p class="mx-auto px-3 pt-0.5 pb-1 mb-1 bg-green-500/50 text-white font-semibold rounded-full text-[13px] inline">
+            <p class="mx-auto sticky top-2 px-3 pt-0.5 pb-1 mb-1 bg-green-700/50 text-white font-semibold rounded-full text-[13px] inline">
               {{ group.date }}
             </p>
             <div 
@@ -90,7 +91,10 @@ const groupedMessages = ref([
             >
               <div class="flex">
                 <p>{{ message.text }}</p>
-                <p class="text-[10px] ml-2 -mb-1 mt-auto text-gray-400">10:00</p>
+                <p 
+                  class="text-[10px] ml-2 -mb-1 mt-auto"
+                  :class="message.sender === 'me' ? 'text-green-700' : 'text-gray-400'"
+                >10:00</p>
               </div>
             </div>
           </div>

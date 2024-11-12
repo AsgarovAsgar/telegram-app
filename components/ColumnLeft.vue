@@ -1,4 +1,15 @@
 <script lang="ts" setup>
+import { faker } from '@faker-js/faker';
+// create 10 dummy data for the chat,each person should be different
+const { data }  = useAsyncData('users', async () => {
+  const res = await fetch('https://randomuser.me/api/?results=20')
+  const data = await res.json()
+  data.results.forEach((user:any) => {
+    user.message = faker.lorem.sentence()
+  })
+  return data.results  
+})
+
 
 </script>
 
@@ -12,12 +23,12 @@
     </div>
 
     <div class="pl-3 py-1.5 flex flex-col overflow-y-scroll scrollbar">
-      <div v-for="i in 10" class="flex relative gap-1 p-1.5 rounded-lg items-center cursor-pointer hover:bg-gray-100">
+      <div v-for="user in data" class="flex relative gap-1 p-1.5 rounded-lg items-center cursor-pointer hover:bg-gray-100">
         <p class="absolute top-2 right-1.5 text-[10px]">Tue</p>
-        <p class="shrink-0 w-[50px] h-[50px] rounded-full bg-green-500"></p>
+        <img class="shrink-0 w-[50px] h-[50px] rounded-full" :src="user.picture.medium" alt="">
         <div class="text-sm">
-          <p class="font-semibold">John Doe</p>
-          <p class="line-clamp-1">Hello, how are you? A looooong message here</p>
+          <p class="font-semibold">{{ user.name.first }} {{ user.name.last }}</p>
+          <p class="line-clamp-1">{{ user.message }}</p>
         </div>
       </div>
     </div>
