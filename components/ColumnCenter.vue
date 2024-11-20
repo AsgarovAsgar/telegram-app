@@ -68,15 +68,15 @@ const groupedMessages = ref([
       </div>
       <div class="flex gap-1 item-center">
         <button class="p-1.5 grid place-content-center rounded-full cursor-pointer hover:bg-gray-100 transition duration-200">
-          <UIcon name="ic:round-search" class="size-5 bg-gray-500"/>
+          <Icon name="ic:round-search" class="size-5 bg-gray-500"/>
         </button>
         <button class="p-1.5 grid place-content-center rounded-full cursor-pointer hover:bg-gray-100 transition duration-200">
-          <UIcon name="ic:baseline-more-vert" class="size-5 bg-gray-500" />
+          <Icon name="ic:baseline-more-vert" class="size-5 bg-gray-500" />
         </button>
       </div>
     </div>
     <div class="relative flex flex-col overflow-hidden grow">
-      <img class="absolute top-0 h-screen object-cover -z-10" src="~/assets/telegram-bg.png" alt="">
+      <img class="absolute top-0 h-screen object-cover -z-10" src="@/assets/telegram-bg.png" alt="">
       <div ref="messageContainerRef" class="mb-2 flex mt-auto flex-col overflow-hidden overflow-y-scroll scrollbar-chat">
         <div :class="isChatVisible ? 'visible': 'invisible'" class="pt-10 pb-1 flex flex-col gap-4 max-w-lg mx-auto w-full">
           <div v-for="group in groupedMessages" :key="group.date" class="flex flex-col gap-1.5">
@@ -100,20 +100,20 @@ const groupedMessages = ref([
           </div>
         </div>
       </div>
-      <!-- <div class="sticky -translate-x-1 bottom-0 w-full max-w-lg mb-4 mx-auto flex gap-2">
+      <div class="sticky -translate-x-1 bottom-0 w-full max-w-lg mb-4 mx-auto flex gap-2">
         <div class="w-full flex bg-white items-center p-3 gap-1.5 rounded-xl">
           <button class="grid place-content-center">
-            <UIcon name="ic:baseline-insert-emoticon" class="size-5 text-gray-400 hover:bg-blue-400 transition duration-200" />
+            <Icon name="ic:baseline-insert-emoticon" class="size-5 text-gray-400 hover:bg-blue-400 transition duration-200" />
           </button>
           <input type="text" placeholder="Message" class="px-1 w-full text-sm rounded-xl border-none focus:outline-none">
           <button class="grid place-content-center">
-            <UIcon name="ic:baseline-attach-file" class="size-5 rotate-30 text-gray-400 hover:bg-blue-400 transition duration-200"  />
+            <Icon name="ic:baseline-attach-file" class="size-5 rotate-30 text-gray-400 hover:bg-blue-400 transition duration-200"  />
           </button>
         </div>
         <button class="bg-white rounded-full py-2.5 px-3 cursor-pointer grid place-items-center transition duration-200 hover:bg-blue-400 group">
-          <UIcon name="ic:baseline-mic-none" class="size-5 text-gray-400 group-hover:text-white" />
+          <Icon name="ic:baseline-mic-none" class="size-5 text-gray-400 group-hover:text-white" />
         </button>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>

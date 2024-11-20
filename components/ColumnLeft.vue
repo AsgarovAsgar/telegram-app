@@ -15,12 +15,12 @@ const { data }  = useAsyncData('users', async () => {
 
 <template>
   <div class="border-r border-gray-200 h-screen overflow-hidden flex flex-col">
-    <!-- <div class="px-3 py-1.5 flex gap-3">
+    <div class="px-3 py-1.5 flex gap-3">
       <button class="p-1.5 rounded-full grid place-content-center cursor-pointer hover:bg-gray-100 transition duration-200">
-        <UIcon name="ic:round-menu" class="size-5 bg-gray-500"/>
+        <Icon name="ic:round-menu" class="size-5 bg-gray-500"/>
       </button>
-      <UInput icon="ic:round-search" variant="soft" :ui="{ base: 'rounded-full bg-gray-100' }" class="flex-1" placeholder="Search"></UInput>
-    </div> -->
+      <!-- <UInput icon="ic:round-search" variant="soft" :ui="{ base: 'rounded-full bg-gray-100' }" class="flex-1" placeholder="Search"></UInput> -->
+    </div>
 
     <div class="pl-3 py-1.5 flex flex-col overflow-y-scroll scrollbar">
       <div v-for="user in data" class="flex relative gap-1 p-1.5 rounded-lg items-center cursor-pointer hover:bg-gray-100">

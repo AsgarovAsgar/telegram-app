@@ -11,7 +11,7 @@ const toggleThirdChild = () => {
 </script>
 
 <template>
-  <div class="grid grid-cols-4 relative bg-primary overflow-hidden">
+  <div class="grid grid-cols-4 relative overflow-hidden">
     <ColumnLeft />
     
     <ColumnCenter :class="secondChildClasses" @on-toggle="toggleThirdChild" />
