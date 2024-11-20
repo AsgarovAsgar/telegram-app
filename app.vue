@@ -3,7 +3,7 @@
 </template>
 
 <style>
-@layer utilities {
+/* @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -21,5 +21,5 @@
     background: rgba(211, 211, 211, 0.5);
     border: 1px solid #ffffff00;
   }
-}
+} */
 </style>
