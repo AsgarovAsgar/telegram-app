@@ -1,13 +1,8 @@
 <template>
-  <UApp>
-    <NuxtPage />
-  </UApp>
+  <NuxtPage />
 </template>
 
 <style>
-@import "tailwindcss";
-@import "@nuxt/ui";
-
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 10px;
