@@ -1,22 +1,14 @@
 <script lang="ts" setup>
-
-const isVisible = ref(false)
-
-const secondChildClasses = computed(() => (isVisible.value ? 'col-span-2' : 'col-span-3'))
-
-const toggleThirdChild = () => {
-  isVisible.value = !isVisible.value
-}
-
+const { isOpen } = useSidebarToggle();
+const secondChildClasses = computed(() =>
+  isOpen.value ? "col-span-2" : "col-span-3"
+);
 </script>
 
 <template>
   <div class="grid grid-cols-4 relative overflow-hidden">
     <ColumnLeft />
-    
-    <ColumnCenter :class="secondChildClasses" @on-toggle="toggleThirdChild" />
-    <div v-show="isVisible" class="col-span-1 bg-red-300">
-      Third Child
-    </div>
+    <ColumnCenter :class="secondChildClasses" />
+    <ColumnRight v-show="isOpen" class="col-span-1" />
   </div>
 </template>
