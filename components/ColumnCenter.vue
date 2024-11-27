@@ -13,11 +13,15 @@ function scrollToBottom() {
     container.scrollTop = container.scrollHeight;
   }
 }
+
+const props = defineProps<{
+  conversation?: unknown;
+}>();
 </script>
 
 <template>
   <div class="flex flex-col overflow-hidden h-screen">
-    <MiddleHeader />
+    <MiddleHeader :conversation="conversation" />
     <div class="relative flex flex-col overflow-hidden grow">
       <img
         class="absolute top-0 h-screen object-cover -z-10"

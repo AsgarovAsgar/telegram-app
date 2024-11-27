@@ -6,9 +6,6 @@ const secondChildClasses = computed(() =>
 </script>
 
 <template>
-  <div class="grid grid-cols-4 relative overflow-hidden">
-    <ColumnLeft />
-    <ColumnCenter :class="secondChildClasses" />
-    <ColumnRight v-show="isOpen" class="col-span-1" />
-  </div>
+  <ColumnCenter :class="secondChildClasses" />
+  <ColumnRight v-show="isOpen" class="col-span-1" />
 </template>

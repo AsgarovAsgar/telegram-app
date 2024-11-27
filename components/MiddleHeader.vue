@@ -1,5 +1,16 @@
 <script lang="ts" setup>
 const { openSidebar } = useSidebarToggle();
+const props = defineProps<{
+  conversation?: unknown;
+}>();
+
+const getDescription = (conversation) => {
+  if (conversation.type === "couple") {
+    return conversation.lastSeen ?? "last seen recently";
+  } else {
+    return `${conversation.contacts?.length} members`;
+  }
+};
 </script>
 
 <template>
@@ -10,10 +21,16 @@ const { openSidebar } = useSidebarToggle();
       class="grow flex gap-2 items-center cursor-pointer"
       @click="openSidebar()"
     >
-      <p class="w-8 h-8 shrink-0 bg-green-400 rounded-full"></p>
+      <img
+        class="shrink-0 w-8 h-8 rounded-full object-cover"
+        :src="getAvatar(conversation)"
+        alt=""
+      />
       <div class="flex flex-col -space-y-1">
-        <p class="font-semibold">John Doe</p>
-        <p class="text-[11px] text-gray-500">last seen recently</p>
+        <p class="font-semibold">{{ getName(conversation) }}</p>
+        <p class="text-[11px] text-gray-500">
+          {{ getDescription(conversation) }}
+        </p>
       </div>
     </div>
     <div class="flex gap-1 item-center">

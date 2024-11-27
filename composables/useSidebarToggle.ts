@@ -1,4 +1,4 @@
-const isOpen = ref<boolean>(true);
+const isOpen = ref<boolean>(false);
 
 export function useSidebarToggle() {
   const openSidebar = () => (isOpen.value = true);

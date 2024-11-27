@@ -3,22 +3,15 @@ const { isOpen } = useSidebarToggle();
 const secondChildClasses = computed(() =>
   isOpen.value ? "col-span-2" : "col-span-3"
 );
-
-import { conversations } from "~/data";
-
 const { id } = useRoute().params;
-const conversation = conversations.find((c) => c.id == id);
 console.log("id", id);
-
-console.log("conversations", conversations);
-
+const conversationStore = useConversationsStore();
+await useAsyncData(async () => conversationStore.fetchConversation(id));
+const { conversation } = storeToRefs(conversationStore);
 console.log("conversation", conversation);
 </script>
 
 <template>
-  <div class="grid grid-cols-4 relative overflow-hidden">
-    <ColumnLeft />
-    <ColumnCenter :class="secondChildClasses" />
-    <ColumnRight v-show="isOpen" class="col-span-1" />
-  </div>
+  <ColumnCenter :class="secondChildClasses" :conversation="conversation" />
+  <ColumnRight v-show="isOpen" class="col-span-1" />
 </template>
