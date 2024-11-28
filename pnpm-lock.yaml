@@ -53,6 +53,9 @@ importers:
       vue-router:
         specifier: latest
         version: 4.4.5(vue@3.5.12(typescript@5.6.3))
+      wavesurfer.js:
+        specifier: ^7.8.9
+        version: 7.8.9
     devDependencies:
       '@faker-js/faker':
         specifier: ^9.2.0
@@ -3574,6 +3577,9 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+
+  wavesurfer.js@7.8.9:
+    resolution: {integrity: sha512-d7jDSrzNp3UErXWEKFlIYRdvzaMlxCoM6Or4qR8uURFp9smcxLXS81uatcs6aPX1OSJgEyyBuffMR5Io3Ft2FQ==}
 
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
@@ -7644,6 +7650,8 @@ snapshots:
       '@vue/shared': 3.5.12
     optionalDependencies:
       typescript: 5.6.3
+
+  wavesurfer.js@7.8.9: {}
 
   webidl-conversions@3.0.1: {}
 

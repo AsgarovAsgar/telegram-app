@@ -212,7 +212,7 @@ const reversedGroups = computed(() => [...groupedMessages.value].reverse());
         class="flex"
         v-else-if="message.content && message.type === 'recording'"
       >
-        <MessageRecording :content="message.content" />
+        <MessageRecording :recording="message.content" />
       </div>
     </div>
   </div>
