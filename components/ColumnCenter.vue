@@ -36,7 +36,7 @@ const props = defineProps<{
           :class="isChatVisible ? 'visible' : 'invisible'"
           class="pt-10 pb-1 flex flex-col gap-4 max-w-lg mx-auto w-full"
         >
-          <MessageList />
+          <MessageList :messages="conversation.messages" />
         </div>
       </div>
       <MiddleFooter />

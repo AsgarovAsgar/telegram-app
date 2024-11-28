@@ -4,11 +4,9 @@ const secondChildClasses = computed(() =>
   isOpen.value ? "col-span-2" : "col-span-3"
 );
 const { id } = useRoute().params;
-console.log("id", id);
 const conversationStore = useConversationsStore();
 await useAsyncData(async () => conversationStore.fetchConversation(id));
 const { conversation } = storeToRefs(conversationStore);
-console.log("conversation", conversation);
 </script>
 
 <template>

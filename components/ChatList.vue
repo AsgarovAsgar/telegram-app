@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 const conversationStore = useConversationsStore();
 const { conversations } = storeToRefs(conversationStore);
-console.log("conversations", conversations);
 
 const getAvatar = (conversation) => {
   if (conversation.type === "couple") {
